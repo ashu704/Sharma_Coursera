@@ -14,8 +14,8 @@
  *
  * <Add Extended Description Here>
  *
- * @author <Add FirsName LastName>
- * @date <Add date >
+ * author :Ashutosh Sharma
+ * date   :23.12.2019
  *
  */
 #ifndef __STATS_H__
@@ -24,17 +24,17 @@
 /* Add Your Declarations and Function Comments here */ 
 
 /**
- * @brief <Add Brief Description of Function Here>
+ * find_minimum() - Function takes in memory location of array and its size to find the smallest element in the array
  *
- * <Add Extended Description Here>
+ * 
  *
- * @param <Add InputName> <add description here>
- * @param <Add InputName> <add description here>
- * @param <Add InputName> <add description here>
- * @param <Add InputName> <add description here>
+ * int a[] :Starting element of the array
+ * int n   :Size of the array
+ * 
  *
- * @return <Add Return Informaiton here>
+ * int(return) :The function the returns the smallest integer in the array
  */
-
+ 
+int find_minimum(int a[], int n);
 
 #endif /* __STATS_H__ */
