@@ -40,9 +40,11 @@ int main() {
   /* Other Variable Declarations Go Here */
   /* Statistics and Printing Functions Go Here */
 
-  
+  printf("Given array :\n");
   print_array(test);
   sort_array(test);
+  printf("sorted array :\n");
+  print_array(test);
   print_statistics(test);
   return 0;
 
@@ -50,9 +52,8 @@ int main() {
 
 
 void print_array(unsigned char a[]){
-	printf("Given array :\n");
 	for(int i=0;i<SIZE;i++){
-		printf("%d",a[i]);
+		printf("%d ",a[i]);
 	}
 	printf("\n");
   
