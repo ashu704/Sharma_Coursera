@@ -9,7 +9,7 @@
  
  *****************************************************************************/
 /*
-   @file <Add File Name> 
+   @file stats.c 
    @brief <Add Brief Description Here >
  
    <Add Extended Description Here>
@@ -22,21 +22,11 @@
 
 
 #include <stdio.h>
-//#include <cstdio>
-//#include "stats.h"
+#include <stdlib.h>
+#include "stats.h"
 
 /* Size of the Data Set */
 #define SIZE (40)
-
-
-
-void print_statistics(int*, int);   // A function that prints the statistics of an array including minimum, maximum, mean, and median.
-void print_array(int*, int);        // Given an array of data and a length, prints the array to the screen
-int find_median(int*, int);         // Given an array of data and a length, returns the median value
-int find_mean(int*, int);           // Given an array of data and a length, returns the mean
-int find_maximum(int*, int);        // Given an array of data and a length, returns the maximum
-int find_minimum(int*, int);        // Given an array of data and a length, returns the minimum
-void sort_array(int*, int);         // Given an array of data and a length, sorts the array in descending order.
 
 
 int main() {
@@ -49,39 +39,30 @@ int main() {
 
   /* Other Variable Declarations Go Here */
   /* Statistics and Printing Functions Go Here */
-  int a[40],n;
-  printf("Enter the size of the array :");
-  scanf("%d",&n);
-  printf("Enter the elements of the array :");
-  for(int i=0;i<n;i++){
-    scanf("%d",&a[i]);
-  }
-  print_array(a,n);
-  sort_array(a,n);
-  print_array(a,n);
-  print_statistics(a,n);
+
+  
+  print_array(test);
+  sort_array(test);
+  print_statistics(test);
   return 0;
 
 }
 
 
-
-
-
-
-void print_array(int a[], int n){
-  for(int i=0;i<n;i++){
-    printf("%d ",a[i]);
-  }
-  printf("\n");
+void print_array(unsigned char a[]){
+	printf("Given array :\n");
+	for(int i=0;i<SIZE;i++){
+		printf("%d",a[i]);
+	}
+	printf("\n");
   
 }
 
-void sort_array(int * ptr, int n){
+void sort_array(unsigned char *ptr){
   int i,j,t;
-  for (i = 0; i < n; i++){ 
-    for (j = i + 1; j < n; j++){ 
-      if (*(ptr + j) < *(ptr + i)){ 
+  for (i = 0; i < SIZE; i++){ 
+    for (j = i + 1; j < SIZE; j++){ 
+      if (*(ptr + j) > *(ptr + i)){ 
         t = *(ptr + i); 
         *(ptr + i) = *(ptr + j); 
         *(ptr + j) = t; 
@@ -90,42 +71,42 @@ void sort_array(int * ptr, int n){
   } 
 }
 
-int find_mean(int a[], int n){
+unsigned char find_mean(unsigned char a[]){
   int sum =0;
-  for(int i=0; i<n; i++)
+  for(int i=0; i<SIZE; i++)
     sum += a[i];
-  return(sum/n);
+  return(sum/SIZE);
 }
 
-int find_median(int a[], int n){
-  if(n%2==0)
-    return ((a[n/2]+a[(n/2)-1])/2);
+unsigned char find_median(unsigned char a[]){
+  if(SIZE%2==0)
+    return ((a[SIZE/2]+a[(SIZE/2)-1])/2);
   else
-    return a[n/2];
+    return a[SIZE/2];
       
 }
 
-int find_maximum(int a[], int n){
+unsigned char find_maximum(unsigned char a[]){
   int max =a[0];
-  for(int i=1;i<n;i++){
+  for(int i=1;i<SIZE;i++){
     if(a[i]>max)
       max = a[i];
   }
   return max;
 }
 
-int find_minimum(int a[], int n){
+unsigned char find_minimum(unsigned char a[]){
   int min =a[0];
-  for(int i=1;i<n;i++){
+  for(int i=1;i<SIZE;i++){
     if(a[i]<min)
       min = a[i];
   }
   return min;
 }
 
-void print_statistics(int a[], int n){
-  printf("median  :%d\n", find_median(a,n));
-  printf("mean    :%d\n", find_mean(a,n));
-  printf("maximum :%d\n", find_maximum(a,n));
-  printf("minimum :%d\n", find_minimum(a,n));
+void print_statistics(unsigned char a[]){
+  printf("median  :%i\n", find_median(a));
+  printf("mean    :%i\n", find_mean(a));
+  printf("maximum :%i\n", find_maximum(a));
+  printf("minimum :%i\n", find_minimum(a));
 }

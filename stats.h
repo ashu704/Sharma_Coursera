@@ -9,7 +9,7 @@
  *
  *****************************************************************************/
 /**
- * @file <Add File Name> 
+ * @file stats.h
  * @brief <Add Brief Description Here >
  *
  * <Add Extended Description Here>
@@ -23,18 +23,85 @@
 
 /* Add Your Declarations and Function Comments here */ 
 
+
+
 /**
- * find_minimum() - Function takes in memory location of array and its size to find the smallest element in the array
+ * Prints out statistics on data array
  *
- * 
+ * Prints statistics of data array including minimum, maximum, mean, and median.
  *
- * int a[] :Starting element of the array
- * int n   :Size of the array
- * 
+ * parameters : The array to be analyzed
  *
- * int(return) :The function the returns the smallest integer in the array
+ * return : no return
  */
- 
-int find_minimum(int a[], int n);
+void print_statistics(unsigned char a[] );
+
+/**
+ * Prints array to the screen
+ *
+ * Given an array of data and length, prints the array to the screen
+ *
+ * parameters : The array to be printed
+ *
+ * return : no return
+ */
+void print_array(unsigned char a[] );
+
+/**
+ * Finds median of array
+ *
+ * Returns mean of all elements in array
+ *
+ * parameters : The array to find the median
+ *
+ * return : The median of array
+ */
+unsigned char find_median(unsigned char a[] );
+
+/**
+ * Finds mean of array
+ *
+ * Returns mean of all elements in array
+ *
+ * parameters :The array to find mean
+ *
+ * return : The mean of array
+ */
+unsigned char find_mean(unsigned char a[]);
+
+/**
+ * Finds maximum of array
+ *
+ * Returns maximum value of all elements in array
+ *
+ * parameters : The array to find the maximum
+ *
+ * return : The maximum of array
+ */
+unsigned char find_maximum(unsigned char a[] );
+
+/**
+ * Finds minimum of array
+ *
+ * Returns minimum value of all elements in arrray
+ *
+ * parameters : The array to find the maximum
+ *
+ * return : The minimum of array
+ */
+unsigned char find_minimum(unsigned char a[]);
+
+/**
+ * Sorts array from largest to smallest
+ *
+ * Given an array of data and a length, sorts array from largest to smallest.
+ * first element has largest value and the last elemenet has smallest value. 
+ *
+ * parameters : The array to sort
+ *
+ * return : no return
+ */
+void sort_array(unsigned char *ptr);
+
 
 #endif /* __STATS_H__ */
